@@ -2,11 +2,10 @@
 Remote treat dispenser that dispenses treats, takes video and sends it back, making the girlfriend happy
 
 
-Eric Page
-eric.w.page.dev@gmail.com
-playwithpickles.com
-https://github.com/bigchewy/PicklesTreatMachine
-
+Creator: Eric Page
+Contact: eric.w.page.dev@gmail.com
+UR: playwithpickles.com
+Code: https://github.com/bigchewy/PicklesTreatMachine
 
 It currently can be triggered via
 1) email
