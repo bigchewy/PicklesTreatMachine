@@ -3,8 +3,11 @@ Remote treat dispenser that dispenses treats, takes video and sends it back, mak
 
 
 Creator: Eric Page
+
 Contact: eric.w.page.dev@gmail.com
-UR: playwithpickles.com
+
+URL: playwithpickles.com
+
 Code: https://github.com/bigchewy/PicklesTreatMachine
 
 It currently can be triggered via
