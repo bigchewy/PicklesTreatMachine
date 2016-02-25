@@ -33,3 +33,8 @@ The process
 The Illustrator files can be used to create your own Treat Machine, perhaps using a laser cutter. The Base is an 18x24" sheet and I generally use 1/4" acrylic. The outer cylinder is 12" long and has a 3" outer diameter. The inner cylinder is 8.5" long and has a 2.5" outer diameter. Both cylinders are 1/4" thickness. 
 
 The base is fairly straightforward but the cylinders require a decent amount of laser cutting or machining skill for it to look nice. 
+
+Dependencies:
+Many. Trying to get less. 
+OpenCV is the biggest one.
+Adafruit-IO
