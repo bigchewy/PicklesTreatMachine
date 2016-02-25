@@ -6,7 +6,7 @@ Creator: Eric Page
 
 Contact: eric.w.page.dev@gmail.com
 
-URL: playwithpickles.com
+URL: www.playwithpickles.com
 
 Code: https://github.com/bigchewy/PicklesTreatMachine
 
