@@ -3,7 +3,7 @@ Remote treat dispenser that a user anywhere in the world can trigger to dispense
 
 Creator: Eric Page
 
-Contact: eric.w.page.dev@gmail.com
+Contact: eric.w.page !@! gmail
 
 URL: www.playwithpickles.com
 
