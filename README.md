@@ -1,6 +1,5 @@
 # PicklesTreatMachine
-Remote treat dispenser that dispenses treats, takes video and sends it back, making the girlfriend happy
-
+Remote treat dispenser that a user anywhere in the world can trigger to dispense treats, takes video and sends it back. This makes my girlfriend and Pickles happy.
 
 Creator: Eric Page
 
@@ -13,12 +12,20 @@ Code: https://github.com/bigchewy/PicklesTreatMachine
 Mailing List: https://groups.google.com/forum/#!forum/remote-treat-dispenser
 
 Issues: right here on Github - https://github.com/bigchewy/PicklesTreatMachine/issues
+message is sent to the designated MQTT feed, the treat dispensing process is activated
 
-The user can currently trigger the machine via
-1) email
-2) anything that can send an event to an MQTT server
+The process
+1) Trigger the machine. It can currently can be triggered via
+ a) an email sent to an email address, specified in the config file. The email listener simply listens for the email and sends an event to an MQTT server, currently Adafruit IO 
+ OR
+ b) send an event directly to an MQTT server 
+ 
+2) Activate the speakers. It plays whatever is in makeNoise.wav e.g. your voice saying, "[your dog's name], come get your treat!"
 
-The email listener simply listens to a specific email address and then sends an MQTT message
+3) Activate the stepper motor. The stepper motor turns a cylinder one full revolution. The cylinder, which should contain treats, is angled slightly down such that gravity pulls the treats down to one end. At that end is a opening, through which the treats drop onto a chute, and then onto the ground
 
-The MQTT listener listens to the MQTT server. When a message is sent to the designated MQTT feed, the treat dispensing process is activated
+4) Activate the motion detection system. Currently using code built off of pyimagesearch.com's amazing tutorials
 
+5) If motion is detected (aka the dog enters the view), take and then save a video
+
+6) Send that video back to the person who initially triggered the event, right now via email.
