@@ -1,5 +1,14 @@
 #!/usr/bin/env python
   
+##################################
+# Absolutely terrible code that needs to be updated.
+#General purpose is to determine the email address of the person who triggered the treat machine,
+#if it was triggered via some method other than email.
+#This could be updated to remove the switchers, perhaps putting them in a json file
+#It could also be used if/when the results of the treat machine are sent back via SMS vs email
+##################################
+
+
 #generic imports
 from email.utils import parseaddr
 import json
