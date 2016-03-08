@@ -37,6 +37,7 @@ class EmailServer:
 		self.bodyText = ''
 		self.attachment1 = conf["recordings"]["videoName"]
 		self.attachment2 = conf["recordings"]["imageName"]
+		self.attachment3 = conf["recordings"]["imageTreatMachine"]
 		self.newEmailsArePresent = False
 		self.mail_list = []
 
@@ -50,6 +51,7 @@ class EmailServer:
 			files = []
 			files.append(self.attachment1)
 			files.append(self.attachment2)
+			files.append(self.attachment3)
 			assert type(files)==list
 			msg = MIMEMultipart()
 			msg['Subject'] = self.subjectText
@@ -108,18 +110,19 @@ class EmailServer:
 		#Set body text
 		intRandom = randint(0,4)
 		switcher = {
-				0: "oh my gosh I'm so sorry that I'm not home to enjoy the treat you gave me. Maybe when I get home a treat will be waiting for me. In the meantime, here is a photo and video that I really like",
-				1: "oh boy oh boy oh boy! I'm not home right now but I'm hoping to get home soon so I can enjoy my treat! In the meantime, here's a photo and video that I really like!",
-				2: "words can not describe how much I am looking forward to the treat when I get home. I'll make sure to send you a picture of me enjoying it",
-				3: "You have just given me yet another thing to look forward to when I get home - a treat from you! Here are some photos that I really like from an earlier time",
-				4: "I love you so much. Unfortunately I'm not at home right now. When I get back, I am sooooo going to enjoy the treat you gave me.  Here are some photos that I really like from an earlier time",
+				0: "oh my gosh I'm so sorry that I'm not home to enjoy the treat you gave me. Maybe when I get home a treat will be waiting for me",
+				1: "oh boy oh boy oh boy! I'm not home right now but I'm hoping to get home soon so I can enjoy my treat!",
+				2: "words can not describe how much I am looking forward to the treat when I get home",
+				3: "You have just given me yet another thing to look forward to when I get home - a treat from you!",
+				4: "I love you so much. Unfortunately I'm not at home right now. When I get back, I am sooooo going to enjoy the treat you gave me",
 		}
 
 		self.bodyText = switcher.get(intRandom, "This will be amazingly awesome when I get home!")
         
 		self.attachment1 = conf["recordings"]["imageIsAway"]
+		self.attachment2 = conf["recordings"]["videoIsAway"]
 
-
+		
 	###########################################
 	#Function to set variables for when Pickles is home e.g. randomly pull different text for the body of the email sent when Pickles is not at home
 	###########################################
@@ -145,8 +148,9 @@ class EmailServer:
 		  
 		self.bodyText = switcher.get(intRandom, "Wow, that was amazingly awesome!")
 
-		self.attachment1 =  conf["recordings"]["pictureName"] 
-		self.attachment2 = 	conf["recordings"]["videoName"]	
+		self.attachment1 = conf["recordings"]["videoName"]
+		self.attachment2 = conf["recordings"]["imageName"]
+
 				
 	###########################################
 	#Function to randomly pull different text for the body of the Thank You - Treat Delivered email
@@ -164,12 +168,12 @@ class EmailServer:
 			0: "You must be busy so I went ahead and gave myself the treat that I know you wanted me to have. Thank you so much", 
 			1: "oh boy oh boy oh boy that was good! What, you didn't trigger the treat machine? hmmmm... maybe I figured out a way to do it myself?!?!", 
 			2: "I know you haven't forgotten about me but, because I haven't seen a treat recently, I got a little worried and got some for myself", 
-			3: "Remember, it's not who delivers the treat that matters. It's the fact that I got to enjoy them. So I gave some tos myself",
+			3: "Remember, it's not who delivers the treat that matters. It's the fact that I got to enjoy them. So I gave some to myself",
 		}
  
 		self.bodyText = switcher.get(intRandom, "Remembember, it's not who delivers the treat that matters. It's the fact that I got to enjoy them. So, yes, I did dispense these myself")
 
-		self.attachment1 = conf["recordings"]["pictureName"]
+		self.attachment1 = conf["recordings"]["imageName"]
 		self.attachment2 = conf["recordings"]["videoName"]
 
 #		self.mail_list = []
